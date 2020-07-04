@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    form(method="post" action="/get-link")
+        p
+            | Viaplay link:
+            input(type='text', name='viaplaylink', value='')
+        button(type="submit") Submit
