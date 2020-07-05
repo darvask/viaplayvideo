@@ -4,6 +4,12 @@ const router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert').strict;
 
+/*
+* Once Viaplay movie URL form is submitted from root path (/)
+* the movie data linked to the URL is fetched asynchronously
+* from the MongoDB where all the movie objects (documents)
+* are stored. Thereafter an action is taken based on the result.
+* */
 router.post('/', (req, res) => {
     try {
         MongoClient.connect('mongodb+srv://mongodb:mongodb@cluster0.2ot5a.mongodb.net/mongodb?retryWrites=true&w=majority', {}, function(err, client) {
