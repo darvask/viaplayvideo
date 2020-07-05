@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
                         .toArray(function(err, data) {
                             err
                                 ? reject(err)
-                                : resolve(data[0]); // the movie JSON object
+                                : resolve(data[0]); // the movie JSON object - {xyz} if match found, {} if no match found
                         });
                 });
             };

@@ -59,10 +59,14 @@ const createLinks = (trailerData) => {
 * */
 const retrieveImdbID = (videoObj) => {
     let imdbId = "";
-    if(videoObj) {
+    if(videoObj && Object.keys(videoObj).length !== 0) {
         imdbId = videoObj._embedded['viaplay:blocks'][0]._embedded['viaplay:product'].content.imdb.id;
     }
     return imdbId;
 };
 
-module.exports = { returnVideoUrl };
+module.exports = {
+    returnVideoUrl,
+    createLinks,
+    retrieveImdbID
+};
