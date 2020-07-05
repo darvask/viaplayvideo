@@ -6,9 +6,9 @@ const assert = require('assert').strict;
 
 router.post('/', (req, res) => {
     try {
-        MongoClient.connect('mongodb://localhost:27017/', {}, function(err, client) {
+        MongoClient.connect('mongodb+srv://mongodb:mongodb@cluster0.2ot5a.mongodb.net/mongodb?retryWrites=true&w=majority', {}, function(err, client) {
             assert.equal(null, err);
-            const db = client.db('mongo');
+            const db = client.db('mongodb');
 
             const doFetch = () => {
                 return new Promise((resolve, reject) => {
